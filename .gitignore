@@ -38,6 +38,7 @@ bower_components
 build/Release
 
 # Dependency directories
+node_modules
 node_modules/
 jspm_packages/
 
@@ -66,8 +67,7 @@ typings/
 *.tgz
 
 # Yarn Integrity file
-.yarn-integrity
-
+.yarn-integrityg
 # dotenv environment variables file
 .env
 .env.test
