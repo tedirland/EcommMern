@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Mern Shopping Cart App",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node backend/server",
-    "server":"nodemon backend/server",
+    "server": "nodemon backend/server",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
@@ -20,7 +21,9 @@
   },
   "homepage": "https://github.com/tedirland/EcommMern#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.15"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
