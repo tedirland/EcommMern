@@ -11,9 +11,6 @@ const ShippingScreen = ({ history }) => {
 
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
-  const [shippingState, setShippingState] = useState(
-    shippingAddress.shippingState
-  )
   const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
   const [country, setCountry] = useState(shippingAddress.country)
 
@@ -21,9 +18,7 @@ const ShippingScreen = ({ history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault()
-    dispatch(
-      saveShippingAddress({ address, city, shippingState, postalCode, country })
-    )
+    dispatch(saveShippingAddress({ address, city, postalCode, country }))
     history.push('/payment')
   }
 
@@ -33,10 +28,10 @@ const ShippingScreen = ({ history }) => {
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
-          <Form.Label>Shipping Address</Form.Label>
+          <Form.Label>Address</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter Address'
+            placeholder='Enter address'
             value={address}
             required
             onChange={(e) => setAddress(e.target.value)}
@@ -47,20 +42,10 @@ const ShippingScreen = ({ history }) => {
           <Form.Label>City</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter Address'
+            placeholder='Enter city'
             value={city}
             required
             onChange={(e) => setCity(e.target.value)}
-          ></Form.Control>
-        </Form.Group>
-        <Form.Group controlId='shippingState'>
-          <Form.Label>State</Form.Label>
-          <Form.Control
-            type='text'
-            placeholder='Enter State'
-            value={shippingState}
-            required
-            onChange={(e) => setShippingState(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
@@ -68,18 +53,18 @@ const ShippingScreen = ({ history }) => {
           <Form.Label>Postal Code</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter Postal Code'
+            placeholder='Enter postal code'
             value={postalCode}
             required
             onChange={(e) => setPostalCode(e.target.value)}
           ></Form.Control>
         </Form.Group>
 
-        <Form.Group controlId='Country'>
+        <Form.Group controlId='country'>
           <Form.Label>Country</Form.Label>
           <Form.Control
             type='text'
-            placeholder='Enter Country'
+            placeholder='Enter country'
             value={country}
             required
             onChange={(e) => setCountry(e.target.value)}

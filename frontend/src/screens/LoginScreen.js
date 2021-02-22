@@ -28,17 +28,18 @@ const LoginScreen = ({ location, history }) => {
     e.preventDefault()
     dispatch(login(email, password))
   }
+
   return (
     <FormContainer>
       <h1>Sign In</h1>
       {error && <Message variant='danger'>{error}</Message>}
-      {loading && <Loader></Loader>}
+      {loading && <Loader />}
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='email'>
           <Form.Label>Email Address</Form.Label>
           <Form.Control
             type='email'
-            placeholder='Enter Email'
+            placeholder='Enter email'
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></Form.Control>
@@ -58,6 +59,7 @@ const LoginScreen = ({ location, history }) => {
           Sign In
         </Button>
       </Form>
+
       <Row className='py-3'>
         <Col>
           New Customer?{' '}
